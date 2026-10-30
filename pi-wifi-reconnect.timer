@@ -1,0 +1,11 @@
+[Unit]
+Description=Check Raspberry Pi Wi-Fi connectivity periodically
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=1min
+AccuracySec=15s
+Unit=pi-wifi-reconnect.service
+
+[Install]
+WantedBy=timers.target

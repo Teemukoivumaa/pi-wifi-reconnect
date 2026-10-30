@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+device=wlan0
+connection=Network # Change to your own network
+state=$(/usr/bin/nmcli -g GENERAL.STATE device show "$device")
+
+case "$state" in
+    20*|30*)
+        /usr/bin/nmcli --wait 30 connection up id "$connection" ifname "$device"
+        ;;
+    *)
+        exit 0
+        ;;
+esac
