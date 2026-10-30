@@ -6,13 +6,16 @@ asks it to reconnect using the saved connection profile. The check starts two
 minutes after boot.
 
 This can help a Raspberry Pi recover after a router restart, but it cannot prevent
-the network outage while the router is restarting. It requires Raspberry Pi OS or
-another system using systemd, NetworkManager, and `nmcli`.
+the network outage while the router is restarting. 
+
+It requires Raspberry Pi OS or another system using systemd, NetworkManager, and `nmcli`.
 
 ## Configure and install
 
-The script defaults to Wi-Fi device `wlan0` and NetworkManager profile `Kotinetti`.
+The script defaults to Wi-Fi device `wlan0` and NetworkManager profile `Network`.
+
 Edit `pi-wifi-reconnect` if your device or saved profile has a different name.
+
 Find the profile name with:
 
 ```sh
